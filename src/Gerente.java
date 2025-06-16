@@ -11,11 +11,7 @@ public class Gerente extends Persona{
     public String getTurno() {
         return turno;
     }
-    //Methods Override
-    @Override
-    public void obtenerRol() {
-        System.out.println("Soy un gerente.");
-    }
+
     @Override
     public void mostrarInfoPersonal() {
         System.out.println("---Gerente---");

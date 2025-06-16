@@ -5,20 +5,20 @@ public interface GestionSistema {
     public abstract void eliminarProducto(String idProducto);
     public abstract void mostrarProductoPorId(String idProducto);
     public abstract void listarTodosLosProductos();
-    Producto buscarProductoPorId(String idProducto); // NUEVO Y PÚBLICO
-    // Gestión de Personal
+    Producto buscarProductoPorId(String idProducto);
+    // Gestion de Personal
     public abstract void agregarPersonal(Persona persona);
     public abstract void eliminarPersonal(String idPersonal);
     public abstract void mostrarPersonalPorId(String idPersonal);
     public abstract void listarTodoElPersonal();
-    // Gestión de Pedidos
+    // Gestion de Pedidos
     public abstract void crearPedido(Pedidos pedido);
     public abstract void mostrarPedido(String numeroPedido);
     public abstract void cancelarPedido(String numeroPedido);
     public abstract void  gestionarCreacionDeNuevoPedido();
     public abstract void editarPedido(String numeroPedido);
     // Informes
-    public abstract int getTotalProductos(); // NUEVO
-    public abstract int getTotalPersonal();  // NUEVO
+    public abstract int getTotalProductos();
+    public abstract int getTotalPersonal();
     public abstract int getTotalPedidos();
 }

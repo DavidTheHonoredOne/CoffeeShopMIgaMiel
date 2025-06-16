@@ -14,11 +14,11 @@ public class Bebida extends  Producto{
     @Override
 
     public void mostrarDetalles(){
-        System.out.println("Bebida:  " +this.getNombre());
-        System.out.println("ID:  " +this.getId());
-        System.out.println("Descripción: " + this.getDescripcion());
-        System.out.println("Tamaño:  " +this.tamanio);
-        System.out.println("Temperatura deseada:  " +this.temperatura);
-        System.out.println("Precio: $" +calcularCosto());
+        System.out.println(" |Postre:  " +this.getNombre());
+        System.out.println(" |ID:  " +this.getId());
+        System.out.println(" |Descripción: " + this.getDescripcion());
+        System.out.println(" |Tamaño:  " +this.tamanio);
+        System.out.println(" |Temperatura deseada:  " +this.temperatura);
+        System.out.println(" |Precio: $" +calcularCosto());
     }
 }

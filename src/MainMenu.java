@@ -42,7 +42,14 @@ public class MainMenu {
                                         System.out.print("Nombre: ");
                                         String nombreBebida = kb.nextLine();
                                         System.out.print("Precio: ");
-                                        double precioBebida = kb.nextDouble();
+                                        double precioBebida;
+                                        do {
+                                            precioBebida = kb.nextDouble();
+                                            if (precioBebida < 0) {
+                                                System.out.println("Por favor, ingrese un precio positivo.");
+                                                System.out.print("Precio: ");
+                                            }
+                                        } while (precioBebida < 0);
                                         kb.nextLine(); // Limpiar salto de línea
                                         System.out.print("ID: ");
                                         String idBebida = kb.nextLine();
@@ -88,6 +95,11 @@ public class MainMenu {
                                 System.out.println("Ingrese el ID del producto a buscar: ");
                                 String idProducto = kb.nextLine();
                                 Producto producto = cafeteria.buscarProductoPorId(idProducto);
+                             if (producto != null) {
+                                    producto.mostrarDetalles();
+                                } else {
+                                    System.out.println("No se encontró un producto con ese ID.");
+                                }
                                 break;
                             case 4:
                                 System.out.println("Ingrese el ID del producto a eliminar: ");
@@ -230,7 +242,7 @@ public class MainMenu {
                     break;
                 case 4:
                     int opcionInformes;
-                    do {
+                    do{
                         System.out.println("--Informes--");
                         System.out.println("1. Total de productos registrados");
                         System.out.println("2. Total de personal registrado");

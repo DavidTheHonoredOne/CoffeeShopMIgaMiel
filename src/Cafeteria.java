@@ -49,14 +49,14 @@ public class Cafeteria implements GestionSistema{
                 this.menuProductos[this.contProducts - 1] = null;
                 this.contProducts--;
                 System.out.println("Producto eliminado exitosamente.");
-                break;
+                return;
             }
         }
-        if (i == this.contProducts + 1) {
+        if (i == this.contProducts) {
             System.out.println("No se encontró un producto con ese ID.");
             return;
         }
-        // Eliminar el producto de todos los pedidos existentes
+        // Se recorre nuevamente el vector para eliminarlos de los pedidos
         for (int k = 0; k < this.contPedidos; k++) {
             this.pedidos[k].eliminarProductoPorId(idProducto);
         }
@@ -68,7 +68,7 @@ public class Cafeteria implements GestionSistema{
             return null;
         }
         for (int i = 0; i < this.contProducts; i++) {
-            if (this.menuProductos[i].getId().equals(idProducto)) {
+            if (this.menuProductos[i].getId().trim().equalsIgnoreCase(idProducto.trim())) {
                 return this.menuProductos[i];
             }
         }
@@ -81,7 +81,7 @@ public class Cafeteria implements GestionSistema{
             return;
         }
         for (int i = 0; i < this.contProducts; i++) {
-            if (this.menuProductos[i].getId().equals(idProducto)) {
+            if (this.menuProductos[i].getId().trim().equalsIgnoreCase(idProducto.trim())) {
                 this.menuProductos[i].mostrarDetalles();
                 return;
             }
@@ -302,4 +302,7 @@ public class Cafeteria implements GestionSistema{
         return this.contPedidos;
     }
 }
+
+
+
 

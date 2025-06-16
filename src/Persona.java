@@ -28,8 +28,7 @@ public abstract class Persona {
     public String getTelefono() {
         return telefono;
     }
-    // Methods abstract
-    public abstract void obtenerRol();
+
     public abstract void mostrarInfoPersonal();
 
 }
